@@ -15,7 +15,16 @@
         A small personal website for Tomas. This page is ready for favorite
         things, photos, projects, and future updates.
       </p>
-      <a href="http://campeanu.me/">Back to family hub</a>
+      <a id="hub-link" href="http://campeanu.me/">Back to family hub</a>
     </main>
+    <script>
+      const hubLink = document.getElementById("hub-link");
+      if (
+        window.location.protocol === "file:" ||
+        ["localhost", "127.0.0.1"].includes(window.location.hostname)
+      ) {
+        hubLink.href = "http://localhost:4174/";
+      }
+    </script>
   </body>
 </html>
